@@ -131,7 +131,7 @@ const UpdateModal = ({ openModal, handleClose, data }) => {
   return (
     <>
       <Modal
-        title="Create Transaction"
+        title="Update Transaction"
         open={openModal}
         onOk={handleOk}
         onCancel={handleClose}
