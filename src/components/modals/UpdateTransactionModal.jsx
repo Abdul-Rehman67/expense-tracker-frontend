@@ -8,6 +8,7 @@ const UpdateModal = ({ openModal, handleClose, data }) => {
   console.log("data===", data);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
+  const [loadingU, setLoadingU] = useState(false);
   const [showCustomCategory, setShowCustomCategory] = useState(false);
   const [currentData, setCurrentData] = useState({});
   const [disabled, setDisabled] = useState(false);
@@ -40,6 +41,7 @@ const UpdateModal = ({ openModal, handleClose, data }) => {
   
 
   const handleOk = () => {
+    setLoadingU(true)
     console.log(formData);
 
     if (
@@ -67,6 +69,7 @@ const UpdateModal = ({ openModal, handleClose, data }) => {
       parsedData = { ...parsedData, ["id"]: data._id };
 
       dispatch(updateTransaction(parsedData)).then(()=>{
+        setLoadingU(false)
         dispatch(getTransaction(query))
         dispatch(getUserData())
         handleClose()
@@ -136,7 +139,7 @@ const UpdateModal = ({ openModal, handleClose, data }) => {
           style: { color: "#ffff", background: "#1D4ED8" },
           disabled: disabled,
         }}
-        okText={!loading?"Create":"Please wait..."}
+        okText={!loadingU?"Update":"Please wait..."}
       >
         <input
           type="text"

@@ -75,7 +75,7 @@ const xaxisCategories = Object.keys(categories);
         options={data.options}
         series={data.series}
         type="bar"
-        width="330"
+        width="300"
       />:<span className="flex justify-center items-center  font-bold">
       No transaction
     </span>}
