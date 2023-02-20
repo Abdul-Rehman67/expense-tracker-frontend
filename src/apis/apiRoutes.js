@@ -1,6 +1,6 @@
 // const domain_prefix = "http://localhost:5000/";
 // const domain_prefix = "http://192.168.1.107:5000/";
-const domain_prefix = "https://iz33xr-5000.preview.csb.app/";
+const domain_prefix = "https://iwxdfy-5000.preview.csb.app/";
 export const SIGN_UP = domain_prefix + "auth/create-user";
 export const LOG_IN = domain_prefix + "auth/login";
 export const CREATE_TRANSACTION = domain_prefix + "transaction/create-transaction";
